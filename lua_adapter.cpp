@@ -45,7 +45,7 @@ Exit0:
     m_nLuaRef = LUA_NOREF;
 }
 
-int luaadapter_getvalue(lua_State* L, LuaObjectMemberType eType, void* pvAddr, size_t uSize)
+int _luaadapter_getvalue(lua_State* L, LuaObjectMemberType eType, void* pvAddr, size_t uSize)
 {
     std::string* pStdStr = NULL;
 
@@ -114,7 +114,7 @@ int luaadapter_getvalue(lua_State* L, LuaObjectMemberType eType, void* pvAddr, s
     return 1;
 }
 
-int luaadapter_setvalue(lua_State* L, LuaObjectMemberType eType, void* pvAddr, size_t uSize)
+int _luaadapter_setvalue(lua_State* L, LuaObjectMemberType eType, void* pvAddr, size_t uSize)
 {
     int         nResult = 0;
     const char* pszStr  = NULL;
@@ -194,7 +194,7 @@ Exit0:
     return nResult;
 }
 
-void luaadapter_registermember(lua_State* L, const char* pszName, size_t uNameLen, LuaObjectMemberType eType, void* pMember)
+void _luaadapter_registermember(lua_State* L, const char* pszName, size_t uNameLen, LuaObjectMemberType eType, void* pMember)
 {
     if (eType == eLuaObjectMemberType_function)
     {

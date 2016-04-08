@@ -42,10 +42,10 @@ enum LuaObjectMemberType
 
 #define LUA_OBJECT_POINTER "__obj_pointer__"
 
-int luaadapter_setvalue(lua_State* L, LuaObjectMemberType eType, void* pvAddr, size_t uSize);
-int luaadapter_getvalue(lua_State* L, LuaObjectMemberType eType, void* pvAddr, size_t uSize);
-void luaadapter_registermember(lua_State* L, const char* pszName, size_t uNameLen, LuaObjectMemberType eType, void* pMember);
 bool luaadapter_issame_luavm(lua_State* L1, lua_State* L2);
+int _luaadapter_setvalue(lua_State* L, LuaObjectMemberType eType, void* pvAddr, size_t uSize);
+int _luaadapter_getvalue(lua_State* L, LuaObjectMemberType eType, void* pvAddr, size_t uSize);
+void _luaadapter_registermember(lua_State* L, const char* pszName, size_t uNameLen, LuaObjectMemberType eType, void* pMember);
 
 template <typename T>
 int luaadapter_function(lua_State* L)
@@ -106,7 +106,7 @@ int luaadapter_index(lua_State* L)
     }
     else
     {
-        nRetCode = luaadapter_getvalue(L, (LuaObjectMemberType)pMemberInfo->nType, pvAddr, pMemberInfo->uSize);
+        nRetCode = _luaadapter_getvalue(L, (LuaObjectMemberType)pMemberInfo->nType, pvAddr, pMemberInfo->uSize);
         LUAADAPTER_FAILED_JUMP(nRetCode == 1);
     }
 
@@ -165,11 +165,11 @@ int luaadapter_newindex(lua_State* L)
     pvAddr = ((unsigned char*)pObj) + pMemberInfo->nOffset;
     if (pMemberInfo->nType == eLuaObjectMemberType_function)
     {
-        printf("lua object can not change function\n");
+        printf("lua object can not change function.\n");
     }
     else
     {
-        nRetCode = luaadapter_setvalue(L, (LuaObjectMemberType)pMemberInfo->nType, pvAddr, pMemberInfo->uSize);
+        nRetCode = _luaadapter_setvalue(L, (LuaObjectMemberType)pMemberInfo->nType, pvAddr, pMemberInfo->uSize);
         LUAADAPTER_FAILED_JUMP(nRetCode == 1);
     }
 
@@ -197,7 +197,7 @@ void luaadapter_registerclass(lua_State* L)
 
     while (pMember->nType != eLuaObjectMemberType_Invalid)
     {
-        luaadapter_registermember(L, pMember->pszName, strlen(pMember->pszName), (LuaObjectMemberType)pMember->nType, pMember);
+        _luaadapter_registermember(L, pMember->pszName, strlen(pMember->pszName), (LuaObjectMemberType)pMember->nType, pMember);
         pMember++;
     }
 
