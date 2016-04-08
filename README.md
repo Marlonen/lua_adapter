@@ -1,5 +1,7 @@
 # 关于`lua_adapter`
-`lua_adapter` 是 `luna` 的C++ 98标准的版本，使用宏取代了C++14的特性。
+1. `lua_adapter` 是 `luna` 的C++ 98标准的版本，使用宏取代了C++14的特性。
+1. `lua_adapter` 修改了 `luna`中的错别字。
+1. `lua_adapter` 删除了`luna`中提供的沙盒环境功能，该功能可由纯lua脚本实现:[Import的lua版本](http://www.dpull.com/blog/2012-12-18-lua_utils).
 
 # 关于`luna`
 
