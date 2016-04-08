@@ -1,3 +1,6 @@
+# 关于`lua_adapter`
+`lua_adapter` 是 `luna` 的C++ 98标准的版本，使用宏取代了C++14的特性。
+
 # 关于`luna`
 
 ## 怎么加到工程中去
