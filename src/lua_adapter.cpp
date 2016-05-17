@@ -2,6 +2,11 @@
 #include "lua_adapter.h"
 #include "lstate.h"
 
+lua_State* luaadapter_getmainthread(lua_State* L)
+{
+    return G(L)->mainthread;
+}
+
 bool luaadapter_issame_luavm(lua_State* L1, lua_State* L2)
 {
     return (L1 == L2) || (G(L1)->mainthread == G(L2)->mainthread);

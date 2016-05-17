@@ -41,7 +41,7 @@
 		443026CA1C78AAAE00CE04C2 /* lutf8lib.c in Sources */ = {isa = PBXBuildFile; fileRef = 443026A71C78AAAE00CE04C2 /* lutf8lib.c */; };
 		443026CB1C78AAAE00CE04C2 /* lvm.c in Sources */ = {isa = PBXBuildFile; fileRef = 443026A81C78AAAE00CE04C2 /* lvm.c */; };
 		443026CC1C78AAAE00CE04C2 /* lzio.c in Sources */ = {isa = PBXBuildFile; fileRef = 443026AA1C78AAAE00CE04C2 /* lzio.c */; };
-		443E20CC1C78AED00011B64F /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 443E20CB1C78AED00011B64F /* main.c */; };
+		443E20CC1C78AED00011B64F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 443E20CB1C78AED00011B64F /* main.cpp */; };
 		443E20D01C78B0430011B64F /* test in CopyFiles */ = {isa = PBXBuildFile; fileRef = 443E20CF1C78AF540011B64F /* test */; };
 /* End PBXBuildFile section */
 
@@ -120,7 +120,7 @@
 		443026A91C78AAAE00CE04C2 /* lvm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lvm.h; path = lua/src/lvm.h; sourceTree = "<group>"; };
 		443026AA1C78AAAE00CE04C2 /* lzio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lzio.c; path = lua/src/lzio.c; sourceTree = "<group>"; };
 		443026AB1C78AAAE00CE04C2 /* lzio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lzio.h; path = lua/src/lzio.h; sourceTree = "<group>"; };
-		443E20CB1C78AED00011B64F /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		443E20CB1C78AED00011B64F /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		443E20CF1C78AF540011B64F /* test */ = {isa = PBXFileReference; lastKnownFileType = folder; path = test; sourceTree = "<group>"; };
 		44C8E1191C75EA9C00AD6203 /* luna */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = luna; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -140,7 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				443E20CF1C78AF540011B64F /* test */,
-				443E20CB1C78AED00011B64F /* main.c */,
+				443E20CB1C78AED00011B64F /* main.cpp */,
 				44C8E1231C75EAB300AD6203 /* lua */,
 				44C8E11B1C75EA9C00AD6203 /* luna */,
 				44C8E11A1C75EA9C00AD6203 /* Products */,
@@ -307,7 +307,7 @@
 				443026BD1C78AAAE00CE04C2 /* lmem.c in Sources */,
 				443026C31C78AAAE00CE04C2 /* lstate.c in Sources */,
 				443026BA1C78AAAE00CE04C2 /* liolib.c in Sources */,
-				443E20CC1C78AED00011B64F /* main.c in Sources */,
+				443E20CC1C78AED00011B64F /* main.cpp in Sources */,
 				443026C51C78AAAE00CE04C2 /* lstrlib.c in Sources */,
 				443026BF1C78AAAE00CE04C2 /* lobject.c in Sources */,
 				443026B41C78AAAE00CE04C2 /* ldebug.c in Sources */,

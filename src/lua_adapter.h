@@ -42,6 +42,7 @@ enum LuaObjectMemberType
 
 #define LUA_OBJECT_POINTER "__obj_pointer__"
 
+lua_State* luaadapter_getmainthread(lua_State* L);
 bool luaadapter_issame_luavm(lua_State* L1, lua_State* L2);
 int _luaadapter_setvalue(lua_State* L, LuaObjectMemberType eType, void* pvAddr, size_t uSize);
 int _luaadapter_getvalue(lua_State* L, LuaObjectMemberType eType, void* pvAddr, size_t uSize);
@@ -253,7 +254,7 @@ struct luaadapter_objref
         lua_setmetatable(L, -2);    \
         \
         lua_pushvalue(L, -1);   \
-        _m_LuaRef.m_pLuaState = L;  \
+        _m_LuaRef.m_pLuaState = luaadapter_getmainthread(L);  \
         _m_LuaRef.m_nLuaRef = luaL_ref(L, LUA_REGISTRYINDEX);  \
     }
 
